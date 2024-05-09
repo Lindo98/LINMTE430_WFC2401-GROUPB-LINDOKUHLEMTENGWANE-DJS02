@@ -13,16 +13,15 @@ form.addEventListener("submit", (event) => {
       throw new Error(
         "Division not performed. Both values are required in inputs. Try again"
       );
-    } else if (dividend == 20 || divider == 20) {
+    } else divider == 0;
+    {
       throw new Error(
         "Division not performed. Invalid number provided. Try again"
       );
-    } else if (dividend 
-    )
-
-    const roundedResult = Math.floor(resultValue);
-    result.innerText = roundedResult;
+    }
   } catch (error) {
     result.innerText = error.message;
   }
+  const roundedResult = Math.floor(resultValue);
+  result.innerText = roundedResult;
 });
