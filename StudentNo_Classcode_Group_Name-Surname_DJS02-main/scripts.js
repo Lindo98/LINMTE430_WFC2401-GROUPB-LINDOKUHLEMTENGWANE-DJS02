@@ -13,15 +13,19 @@ form.addEventListener("submit", (event) => {
       throw new Error(
         "Division not performed. Both values are required in inputs. Try again"
       );
-    } else divider == 0;
-    {
+    } else if (divider == 0) {
       throw new Error(
         "Division not performed. Invalid number provided. Try again"
       );
     }
+
+    if (isNaN(dividend) || isNaN(divider)) {
+      return (document.body.innerHTML =
+        "Something critical went wrong. Please reload the page");
+    }
+    const roundedResult = Math.floor(resultValue);
+    result.innerText = roundedResult;
   } catch (error) {
     result.innerText = error.message;
   }
-  const roundedResult = Math.floor(resultValue);
-  result.innerText = roundedResult;
 });
