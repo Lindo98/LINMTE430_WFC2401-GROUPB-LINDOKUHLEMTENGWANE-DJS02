@@ -1,6 +1,5 @@
 const form = document.querySelector("[data-form]");
 const result = document.querySelector("[data-result]");
-//const errorMessage = document.querySelector("[data-error]");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -8,6 +7,7 @@ form.addEventListener("submit", (event) => {
   const { dividend, divider } = Object.fromEntries(entries);
   const resultValue = dividend / divider;
   const roundedResult = Math.floor(resultValue);
+
   try {
     if (dividend === "" || divider === "") {
       throw new Error(

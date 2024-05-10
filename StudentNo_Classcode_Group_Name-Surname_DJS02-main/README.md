@@ -16,8 +16,12 @@ The provided HTML and JavaScript setup a basic form for inputting two numbers (d
 
 <h2 style="color:#e67e22">Resolved Stories</h2>
 
-1. **Initial State**: On page load, the message “No calculation performed” is displayed, indicating no action has been taken yet.
-2. **Whole Number Division**: Upon submitting two numbers that divide evenly (e.g., 20 divided by 10), the application correctly displays the whole number result.
+1. **Starting program state**: On page load, the message “No calculation performed” is displayed, indicating no action has been taken yet.
+2. **Dividing numbers result in a whole number**: Upon submitting two numbers that divide evenly (e.g., 20 divided by 10), the application correctly displays the whole number result.
+3. **Dividing numbers result in a decimal number**: I have used math.floor here to round down the decimals to whole numbers (e.g., when 20 is divided by 3 it is going to give a whole number that is rounded down which is 6).
+4. **Validation when values are missing**: I used an if statement to throw an error so that if the values are missing the code doesn't execute and instead throw an error as an inner text
+5. **An invalid division should log an error in the console**: I used an if statement as well, if the divider is 0 the division should be done it should throw an error.
+6. **Providing anything that is not a number should crash the program**: if the user inputs letters or anything that is not a number then the entire screen will crash and they will have to refresh to try again. I used an if statement here and the results should display/replace the entire document
 
 ### Scenario: Starting program state
 
@@ -31,8 +35,6 @@ The provided HTML and JavaScript setup a basic form for inputting two numbers (d
 - WHEN 20 is entered into the first input
 - AND 10 is entered into the second input
 - THEN 2 should be displayed at the bottom
-
-<h2 style="color:#e67e22">Unresolved Stories</h2>
 
 ### Scenario: Dividing numbers result in a decimal number
 
@@ -66,16 +68,7 @@ The provided HTML and JavaScript setup a basic form for inputting two numbers (d
 - THEN the entire screen should be replaced with “
 - AND an error should be logged in the browser console that shows the call stack.
 
-#### Task Instructions
+#### Solution
 
-1. **Review the Starter Code**: Understand the current implementation and its limitations.
-2. **Implement User Stories**: Modify the code to fulfill all unresolved user stories. Pay attention to error handling and user input validation.
-3. **Error Handling**: Ensure the application handles errors gracefully, providing clear feedback to the user without crashing.
-4. **Testing**: Test your application thoroughly with various inputs to ensure it meets all the user stories.
-
-#### Submission Requirements
-
-- Updated HTML and JavaScript files.
-- Submit your project to the LMS Project Tab for DJS02
-
-This project challenges you to think critically about user input, error handling, and providing a seamless user experience. Ensure your solution is robust, user-friendly, and meets the specified requirements.
+3. **Error Handling**: I used try-catch to validate the inputs to ensure the application handles errors gracefully
+4. **Testing**: Tested my application thoroughly with various inputs to ensure it meets all the user stories.
