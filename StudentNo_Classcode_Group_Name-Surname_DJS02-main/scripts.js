@@ -7,7 +7,7 @@ form.addEventListener("submit", (event) => {
   const entries = new FormData(event.target);
   const { dividend, divider } = Object.fromEntries(entries);
   const resultValue = dividend / divider;
-
+  const roundedResult = Math.floor(resultValue);
   try {
     if (dividend === "" || divider === "") {
       throw new Error(
@@ -17,15 +17,15 @@ form.addEventListener("submit", (event) => {
       throw new Error(
         "Division not performed. Invalid number provided. Try again"
       );
-    }
-
-    if (isNaN(dividend) || isNaN(divider)) {
-      return (document.body.innerHTML =
-        "Something critical went wrong. Please reload the page");
-    }
-    const roundedResult = Math.floor(resultValue);
-    result.innerText = roundedResult;
+    } else if (isNaN(dividend) || isNaN(divider)) {
+      throw new Error(
+        (document.body.innerHTML =
+          "Something critical went wrong. Please reload the page")
+      );
+    } else result.innerText = roundedResult;
   } catch (error) {
     result.innerText = error.message;
   }
+
+  console.log(result.innerText);
 });
